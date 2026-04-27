@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — AbleMind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0e0f11;
+      --surface:  #16181c;
+      --border:   #2a2d33;
+      --cyan:     #4EC9D8;
+      --white:    #f0f2f5;
+      --muted:    #7a8090;
+      --text:     #c8cdd8;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Archivo', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: var(--cyan);
+    }
+
+    .back-btn {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 1px solid var(--cyan);
+      padding: 8px 16px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .back-btn:hover {
+      background: var(--cyan);
+      color: var(--bg);
+    }
+
+    .hero {
+      padding: 80px 40px 60px;
+      border-bottom: 1px solid var(--border);
+      max-width: 860px;
+    }
+
+    .eyebrow {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--cyan);
+    }
+
+    h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.0;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+
+    h1 span { color: var(--cyan); }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      min-height: calc(100vh - 200px);
+    }
+
+    aside {
+      border-right: 1px solid var(--border);
+      padding: 48px 32px;
+      position: sticky;
+      top: 61px;
+      height: calc(100vh - 61px);
+      overflow-y: auto;
+    }
+
+    .toc-label {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 0 6px 12px;
+      border-left: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      letter-spacing: 0.02em;
+    }
+
+    .toc a:hover {
+      color: var(--cyan);
+      border-left-color: var(--cyan);
+    }
+
+    main {
+      padding: 48px 56px 80px;
+      max-width: 720px;
+    }
+
+    .section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 20px;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 20px;
+      background: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .callout {
+      background: var(--surface);
+      border-left: 3px solid var(--cyan);
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .callout strong {
+      color: var(--cyan);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .callout.warning {
+      border-left-color: #e8a040;
+    }
+
+    .callout.warning strong {
+      color: #e8a040;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin-top: 24px;
+    }
+
+    .contact-box a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--cyan); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 48px 20px 40px; }
+      .layout { grid-template-columns: 1fr; }
+      aside { display: none; }
+      main { padding: 32px 20px 60px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">ABLEMIND</a>
+    <a href="/" class="back-btn">← Back</a>
+  </nav>
+
+  <div class="hero">
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of <span>Service</span></h1>
+    <p class="hero-meta">BeachDev LLC &nbsp;·&nbsp; Effective: April 2026 &nbsp;·&nbsp; Last updated: April 2026</p>
+  </div>
+
+  <div class="layout">
+
+    <aside>
+      <div class="toc-label">Contents</div>
+      <nav class="toc">
+        <a href="#acceptance">Acceptance</a>
+        <a href="#description">What AbleMind Is</a>
+        <a href="#requirements">Requirements</a>
+        <a href="#subscription">Subscription & Billing</a>
+        <a href="#byok">Your API Keys</a>
+        <a href="#ai-output">AI Output</a>
+        <a href="#acceptable-use">Acceptable Use</a>
+        <a href="#ip">Intellectual Property</a>
+        <a href="#disclaimer">Disclaimer</a>
+        <a href="#liability">Limitation of Liability</a>
+        <a href="#termination">Termination</a>
+        <a href="#governing-law">Governing Law</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </aside>
+
+    <main>
+
+      <section class="section" id="acceptance">
+        <h2>Acceptance of Terms</h2>
+        <p>By downloading, installing, or using AbleMind ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+        <p>These Terms constitute a legally binding agreement between you and BeachDev LLC ("we," "us," or "our"), a limited liability company.</p>
+      </section>
+
+      <section class="section" id="description">
+        <h2>What AbleMind Is</h2>
+        <p>AbleMind is an iOS application that connects to Ableton Live running on your computer via your local Wi-Fi network. It allows you to control your Ableton Live session, generate MIDI, shape sounds, and manage your session using natural language through a third-party AI provider of your choosing.</p>
+        <div class="callout warning">
+          <strong>Beta Software</strong>
+          AbleMind is currently in beta. Features may change, bugs may exist, and the product is under active development. We appreciate your patience and feedback as we work toward a stable release.
+        </div>
+        <p>AbleMind requires a separately licensed copy of Ableton Live (version 10 or later) and a valid API key from a supported AI provider. These are not included with AbleMind and must be obtained independently.</p>
+      </section>
+
+      <section class="section" id="requirements">
+        <h2>Requirements</h2>
+        <p>To use AbleMind you must:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>iOS device</td>
+              <td>iPhone running iOS 16 or later</td>
+            </tr>
+            <tr>
+              <td>Ableton Live</td>
+              <td>Version 10 or later, any edition, running on macOS or Windows</td>
+            </tr>
+            <tr>
+              <td>AbleMind Bridge</td>
+              <td>The free Python Control Surface script installed in Ableton</td>
+            </tr>
+            <tr>
+              <td>AI API key</td>
+              <td>A valid API key from a supported provider (Google, xAI, Anthropic, or OpenAI)</td>
+            </tr>
+            <tr>
+              <td>Local network</td>
+              <td>Your iPhone and computer must be on the same Wi-Fi network</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>You are responsible for maintaining valid licenses and accounts for all third-party software and services required to use AbleMind.</p>
+      </section>
+
+      <section class="section" id="subscription">
+        <h2>Subscription & Billing</h2>
+        <p>AbleMind is offered on a subscription basis with the following tiers:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Price</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Free Trial</td>
+              <td>7 days</td>
+              <td>Full access. No credit card required during trial.</td>
+            </tr>
+            <tr>
+              <td>Monthly</td>
+              <td>$6.99 / month</td>
+              <td>Introductory pricing. Subject to change with notice.</td>
+            </tr>
+            <tr>
+              <td>Annual</td>
+              <td>$39.99 / year</td>
+              <td>Billed annually. Equivalent to ~$3.33/month.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>All subscriptions are managed through the Apple App Store and processed by Apple. Payments are charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p>
+        <p>To cancel your subscription, go to your iPhone Settings → Apple ID → Subscriptions → AbleMind. Cancellation takes effect at the end of the current billing period. We do not offer refunds for partial subscription periods except where required by applicable law.</p>
+        <div class="callout">
+          <strong>Pricing may change</strong>
+          We reserve the right to change subscription pricing with reasonable advance notice. Price changes will not affect your current billing period.
+        </div>
+      </section>
+
+      <section class="section" id="byok">
+        <h2>Your API Keys (BYOK)</h2>
+        <p>AbleMind uses a bring-your-own-key (BYOK) model. You are responsible for obtaining and maintaining a valid API key from your chosen AI provider and for all costs associated with your API usage.</p>
+        <p>BeachDev LLC is not responsible for:</p>
+        <div class="callout warning">
+          <strong>Your responsibility</strong>
+          API costs incurred through your use of AbleMind · Rate limits or service interruptions from your AI provider · Changes to your AI provider's pricing, terms, or availability · Any data you send to your AI provider through AbleMind
+        </div>
+        <p>Your API key is stored securely in the iOS Keychain on your device and is never transmitted to BeachDev LLC. See our Privacy Policy for full details.</p>
+      </section>
+
+      <section class="section" id="ai-output">
+        <h2>AI Output</h2>
+        <p>AbleMind uses AI to interpret your natural language instructions and generate actions inside Ableton Live, including but not limited to MIDI notes, device parameter changes, track creation, and clip launching.</p>
+        <p>AI output is inherently variable and unpredictable. We make no guarantees about the musical quality, accuracy, or fitness of any content generated by the AI. You are responsible for reviewing and editing all AI-generated content before use in your projects.</p>
+        <div class="callout">
+          <strong>You own what you create</strong>
+          Any MIDI, patterns, or session configurations generated through AbleMind in your Ableton session belong to you. BeachDev LLC claims no ownership over your creative output.
+        </div>
+        <p>We are not responsible for actions taken by the AI inside your Ableton session, including unintended changes to your project. We recommend saving your Ableton project before using AbleMind, especially for complex or unfamiliar prompts.</p>
+      </section>
+
+      <section class="section" id="acceptable-use">
+        <h2>Acceptable Use</h2>
+        <p>You agree to use AbleMind only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+        <div class="callout warning">
+          <strong>Prohibited uses</strong>
+          Attempt to reverse engineer, decompile, or extract the source code of the iOS app · Use AbleMind to generate content that infringes on third-party intellectual property rights · Resell, sublicense, or redistribute AbleMind or any component of it · Use the AbleMind Bridge in conjunction with any application other than the official AbleMind iOS app for commercial purposes without written permission · Circumvent or attempt to circumvent subscription restrictions
+        </div>
+        <p>The AbleMind Bridge (Python Control Surface script) is provided as open source software. Its use is subject to the terms of its open source license as published on GitHub.</p>
+      </section>
+
+      <section class="section" id="ip">
+        <h2>Intellectual Property</h2>
+        <p>AbleMind, including its iOS application, design, branding, and proprietary components, is owned by BeachDev LLC and protected by applicable intellectual property laws.</p>
+        <p>The AbleMind name, logo, and related marks are trademarks of BeachDev LLC. You may not use these marks without prior written permission.</p>
+        <p>AbleMind is designed to work with Ableton Live. "Ableton" and "Ableton Live" are trademarks of Ableton AG. BeachDev LLC is not affiliated with, endorsed by, or sponsored by Ableton AG.</p>
+      </section>
+
+      <section class="section" id="disclaimer">
+        <h2>Disclaimer of Warranties</h2>
+        <p>AbleMind is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+        <p>We do not warrant that the App will be uninterrupted, error-free, or free of viruses or other harmful components. We do not warrant that the App will function correctly with every version of Ableton Live, every AI provider, or every hardware and software configuration.</p>
+        <p>Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusions may not apply to you.</p>
+      </section>
+
+      <section class="section" id="liability">
+        <h2>Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, BeachDev LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, loss of profits, or damage to your Ableton projects, arising out of or in connection with your use of AbleMind.</p>
+        <p>In no event shall BeachDev LLC's total liability to you for all claims arising out of or related to these Terms or your use of AbleMind exceed the amount you paid to BeachDev LLC in the twelve months preceding the claim.</p>
+        <div class="callout warning">
+          <strong>Save your work</strong>
+          AbleMind makes real changes to your Ableton session. Always save your project before using AbleMind on important work. BeachDev LLC is not responsible for unintended changes to your Ableton projects.
+        </div>
+      </section>
+
+      <section class="section" id="termination">
+        <h2>Termination</h2>
+        <p>We reserve the right to suspend or terminate your access to AbleMind at any time if we believe you have violated these Terms or if continued access would be harmful to other users or to BeachDev LLC.</p>
+        <p>You may stop using AbleMind at any time by cancelling your subscription and deleting the app. Cancellation instructions are in the Subscription & Billing section above.</p>
+        <p>Upon termination, your right to use AbleMind ceases immediately. Provisions of these Terms that by their nature should survive termination will survive, including ownership provisions, warranty disclaimers, and limitations of liability.</p>
+      </section>
+
+      <section class="section" id="governing-law">
+        <h2>Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the United States and the state in which BeachDev LLC is registered, without regard to conflict of law principles.</p>
+        <p>Any dispute arising from these Terms or your use of AbleMind shall be resolved through binding arbitration in accordance with the American Arbitration Association's rules, except that either party may seek injunctive relief in a court of competent jurisdiction for intellectual property matters.</p>
+      </section>
+
+      <section class="section" id="changes">
+        <h2>Changes to These Terms</h2>
+        <p>We may update these Terms from time to time as the product evolves. When we make material changes, we will update the "Last updated" date at the top of this page and notify users through the app where appropriate.</p>
+        <p>Your continued use of AbleMind after changes are posted constitutes your acceptance of the updated Terms. If you do not agree to the updated Terms, you should stop using AbleMind and cancel your subscription.</p>
+      </section>
+
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>If you have questions about these Terms or need to reach BeachDev LLC for any reason, please contact us:</p>
+        <div class="contact-box">
+          <p style="margin-bottom:12px; font-size:13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">BeachDev LLC</p>
+          <a href="mailto:admin@beachdevllc.com">admin@beachdevllc.com</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <span>© 2026 BeachDev LLC. All rights reserved.</span>
+    <a href="/">ablemind.live</a>
+  </footer>
+
+</body>
+</html>

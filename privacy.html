@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — AbleMind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0e0f11;
+      --surface:  #16181c;
+      --border:   #2a2d33;
+      --cyan:     #4EC9D8;
+      --white:    #f0f2f5;
+      --muted:    #7a8090;
+      --text:     #c8cdd8;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Archivo', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: var(--cyan);
+    }
+
+    .back-btn {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 1px solid var(--cyan);
+      padding: 8px 16px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .back-btn:hover {
+      background: var(--cyan);
+      color: var(--bg);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 40px 60px;
+      border-bottom: 1px solid var(--border);
+      max-width: 860px;
+    }
+
+    .eyebrow {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--cyan);
+    }
+
+    h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.0;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: var(--cyan);
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      min-height: calc(100vh - 200px);
+    }
+
+    /* ── Sidebar ── */
+    aside {
+      border-right: 1px solid var(--border);
+      padding: 48px 32px;
+      position: sticky;
+      top: 61px;
+      height: calc(100vh - 61px);
+      overflow-y: auto;
+    }
+
+    .toc-label {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 0;
+      border-left: 2px solid transparent;
+      padding-left: 12px;
+      transition: color 0.15s, border-color 0.15s;
+      letter-spacing: 0.02em;
+    }
+
+    .toc a:hover {
+      color: var(--cyan);
+      border-left-color: var(--cyan);
+    }
+
+    /* ── Content ── */
+    main {
+      padding: 48px 56px 80px;
+      max-width: 720px;
+    }
+
+    .section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 20px;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 20px;
+      background: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Callout boxes ── */
+    .callout {
+      background: var(--surface);
+      border-left: 3px solid var(--cyan);
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .callout strong {
+      color: var(--cyan);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .tag {
+      display: inline-block;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      background: rgba(78, 201, 216, 0.1);
+      color: var(--cyan);
+      border: 1px solid rgba(78, 201, 216, 0.3);
+    }
+
+    .tag.none {
+      background: rgba(122, 128, 144, 0.1);
+      color: var(--muted);
+      border-color: var(--border);
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin-top: 24px;
+    }
+
+    .contact-box a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--cyan); }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 48px 20px 40px; }
+      .layout { grid-template-columns: 1fr; }
+      aside { display: none; }
+      main { padding: 32px 20px 60px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">ABLEMIND</a>
+    <a href="/" class="back-btn">← Back</a>
+  </nav>
+
+  <div class="hero">
+    <div class="eyebrow">Legal</div>
+    <h1>Privacy <span>Policy</span></h1>
+    <p class="hero-meta">BeachDev LLC &nbsp;·&nbsp; Effective: April 2026 &nbsp;·&nbsp; Last updated: April 2026</p>
+  </div>
+
+  <div class="layout">
+
+    <aside>
+      <div class="toc-label">Contents</div>
+      <nav class="toc">
+        <a href="#overview">Overview</a>
+        <a href="#what-we-collect">What We Collect</a>
+        <a href="#what-we-dont">What We Don't Collect</a>
+        <a href="#api-keys">API Keys</a>
+        <a href="#ai-providers">AI Providers</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#third-parties">Third Parties</a>
+        <a href="#children">Children</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </aside>
+
+    <main>
+
+      <section class="section" id="overview">
+        <h2>Overview</h2>
+        <p>AbleMind is an iOS application developed by BeachDev LLC that connects to Ableton Live via your local network and allows you to control your session using natural language and AI.</p>
+        <p>We built AbleMind with privacy as a foundation, not an afterthought. The short version: we don't see your prompts, we don't store your session data, and we don't sell anything about you to anyone.</p>
+        <div class="callout">
+          <strong>The simple version</strong>
+          Your music, your prompts, and your API keys never touch our servers. Everything stays between your iPhone, your computer, and the AI provider you choose.
+        </div>
+      </section>
+
+      <section class="section" id="what-we-collect">
+        <h2>What We Collect</h2>
+        <p>AbleMind may collect the following limited, anonymous data for the purpose of improving the product:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Purpose</th>
+              <th>Identifiable?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>App opens / session starts</td>
+              <td>Usage trends</td>
+              <td><span class="tag none">No</span></td>
+            </tr>
+            <tr>
+              <td>Feature interactions (e.g. which AI provider selected)</td>
+              <td>Product decisions</td>
+              <td><span class="tag none">No</span></td>
+            </tr>
+            <tr>
+              <td>Crash reports</td>
+              <td>Bug fixes</td>
+              <td><span class="tag none">No</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>All analytics data is anonymized and aggregated. We cannot identify you from this data and we do not attempt to.</p>
+        <p>You can opt out of analytics at any time in the app's Settings screen.</p>
+      </section>
+
+      <section class="section" id="what-we-dont">
+        <h2>What We Don't Collect</h2>
+        <p>To be explicit about what we do not do:</p>
+        <div class="callout">
+          <strong>We never collect</strong>
+          Your chat prompts or AI responses · Your Ableton session data (tracks, clips, devices, MIDI) · Your AI provider API keys · Your name, email, or any account information · Your location · Any audio or MIDI you create
+        </div>
+        <p>BeachDev LLC does not proxy, log, store, or have access to any communication between the AbleMind app and your chosen AI provider. That communication goes directly from your iPhone to the provider's API.</p>
+      </section>
+
+      <section class="section" id="api-keys">
+        <h2>API Keys</h2>
+        <p>AbleMind requires you to provide your own API key from an AI provider (such as Google, xAI, Anthropic, or OpenAI). This is a deliberate design choice.</p>
+        <p>Your API key is stored exclusively in the iOS Keychain on your device — Apple's encrypted, hardware-protected credential store. It is never transmitted to BeachDev LLC's servers or any third party other than the AI provider you are authenticating with.</p>
+        <div class="callout">
+          <strong>How your API key is used</strong>
+          Your key is sent directly from your iPhone to your chosen AI provider's API endpoint to authenticate your requests. That is its only use.
+        </div>
+      </section>
+
+      <section class="section" id="ai-providers">
+        <h2>AI Providers</h2>
+        <p>AbleMind supports multiple AI providers. When you send a prompt, your message — along with context about your Ableton session — is sent directly from your device to the provider you have selected.</p>
+        <p>This data is subject to each provider's own privacy policy, not ours. We encourage you to review the privacy policy of your chosen provider:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Privacy Policy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google (Gemini)</td>
+              <td>ai.google.dev/terms</td>
+            </tr>
+            <tr>
+              <td>xAI (Grok)</td>
+              <td>x.ai/legal/privacy</td>
+            </tr>
+            <tr>
+              <td>Anthropic (Claude)</td>
+              <td>anthropic.com/privacy</td>
+            </tr>
+            <tr>
+              <td>OpenAI (GPT)</td>
+              <td>openai.com/privacy</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>BeachDev LLC has no visibility into the content of your prompts or the responses returned by these providers.</p>
+      </section>
+
+      <section class="section" id="analytics">
+        <h2>Analytics</h2>
+        <p>We use minimal, privacy-respecting analytics to understand how AbleMind is being used at an aggregate level. This helps us prioritize features and fix issues.</p>
+        <p>We do not use third-party advertising analytics or tracking pixels. We do not build profiles of individual users. We do not share analytics data with third parties for any commercial purpose.</p>
+        <p>To opt out of analytics collection, go to <strong>Settings → Privacy → Analytics</strong> in the AbleMind app.</p>
+      </section>
+
+      <section class="section" id="third-parties">
+        <h2>Third Parties</h2>
+        <p>AbleMind uses the following third-party services:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>Data Shared</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RevenueCat</td>
+              <td>Subscription management</td>
+              <td>Purchase receipt (anonymous)</td>
+            </tr>
+            <tr>
+              <td>Apple App Store</td>
+              <td>Distribution & payments</td>
+              <td>Subject to Apple's privacy policy</td>
+            </tr>
+            <tr>
+              <td>Your chosen AI provider</td>
+              <td>Natural language processing</td>
+              <td>Your prompts and session context</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>We do not sell your data to any third party. Ever.</p>
+      </section>
+
+      <section class="section" id="children">
+        <h2>Children</h2>
+        <p>AbleMind is not directed at children under the age of 13. We do not knowingly collect any information from children. If you believe a child has provided information through our app, please contact us and we will take appropriate action.</p>
+      </section>
+
+      <section class="section" id="changes">
+        <h2>Changes to This Policy</h2>
+        <p>We may update this privacy policy as the product evolves. When we make material changes, we will update the "Last updated" date at the top of this page and, where appropriate, notify users through the app.</p>
+        <p>Continued use of AbleMind after changes are posted constitutes your acceptance of the updated policy.</p>
+      </section>
+
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy or how AbleMind handles your data, please reach out:</p>
+        <div class="contact-box">
+          <p style="margin-bottom:12px; font-size:13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">BeachDev LLC</p>
+          <a href="mailto:privacy@ablemind.live">privacy@ablemind.live</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <span>© 2026 BeachDev LLC. All rights reserved.</span>
+    <a href="/">ablemind.live</a>
+  </footer>
+
+</body>
+</html>
