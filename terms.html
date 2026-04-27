@@ -135,6 +135,8 @@
       top: 61px;
       height: calc(100vh - 61px);
       overflow-y: auto;
+      overflow-x: hidden;
+      min-width: 0;
     }
 
     .toc-label {
@@ -155,6 +157,9 @@
       border-left: 2px solid transparent;
       transition: color 0.15s, border-color 0.15s;
       letter-spacing: 0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .toc a:hover {
